@@ -1,11 +1,12 @@
 @import "./mixins";
+@import "./fonts";
 
 html {
   margin: 0;
   padding: 0;
 }
 
-body {
+.page {
   display: flex;
   flex-flow: column nowrap;
   margin: 0;
@@ -13,6 +14,13 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+.page-content {
+  padding: 20px;
+  background: #ddd;
+  flex: 1;
+}
+
 .wrapper {
   .wrapper();
 }

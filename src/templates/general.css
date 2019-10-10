@@ -1,14 +1,25 @@
+@font-face {
+  font-family: 'Intro-Regular';
+  src: url('~../fonts/Intro/Intro-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   margin: 0;
   padding: 0;
 }
-body {
+.page {
   display: flex;
   flex-flow: column nowrap;
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
+}
+.page-content {
+  padding: 20px;
+  background: #ddd;
+  flex: 1;
 }
 .wrapper {
   width: 980px;

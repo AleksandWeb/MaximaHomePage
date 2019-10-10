@@ -1,0 +1,13 @@
+@fontRegular: 'Intro-Regular';
+
+
+.font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
+  font-family: '@{fontName}';
+  src: url('~../fonts/Intro/@{urlName}.otf') format('opentype');
+  font-weight: @weight;
+  font-style: @style;
+}
+
+@font-face {
+  .font(@fontRegular);
+}

@@ -1,9 +1,14 @@
-header {
+.header {
   height: 100px;
   background: #777555;
-  color: #fff;
+  font-family: Intro-Regular;
 }
-header .header-fixed {
+.header-wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+.header-section_fixed {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,17 +16,33 @@ header .header-fixed {
   width: 100%;
   background: linear-gradient(to right, #e23760 0%, #f8597f 100%);
 }
-header .header-fixed .wrapper {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-}
-header .header-fixed .wrapper .header-item {
+.header-fixed-item {
   display: flex;
   align-items: center;
-  margin: 0 20px;
+  color: #ffffff;
+  justify-content: center;
 }
-header .header-fixed-place {
+.header-fixed-item:first-child,
+.header-fixed-item:last-child {
+  width: 230px;
+}
+.header-fixed-item_bg_red {
+  background: #cd355a;
+}
+.header-fixed-button {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+.header-fixed-button span {
+  text-decoration: none;
+}
+.header-fixed-button:hover span {
+  text-decoration: underline;
+}
+.header-section-fixed-place {
   height: 50px;
+  width: 100%;
 }
 /*# sourceMappingURL=headerStyle.css.map */

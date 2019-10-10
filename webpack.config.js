@@ -3,15 +3,18 @@ const fs = require('fs');
 const autoprefixer = require('autoprefixer');
 const ExtractCssChunks = require("extract-css-chunks-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin= require('copy-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const SpritesmithPlugin = require('webpack-spritesmith');
 
 const date = new Date();
 const time = date.getTime();
 
 const cssLoaders = [];
 
-const jsPath = './static/js/',
-    cssPath = './static/css/';
+const jsPath = './js/',
+    cssPath = './css/';
 
 function generateHtmlPlugins(templateDir) {
     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -27,7 +30,7 @@ function generateHtmlPlugins(templateDir) {
                 {
                     loader: 'style-loader'
                 },
-                {
+               {
                     loader:ExtractCssChunks.loader,
                     options: {
                         hot: true,
@@ -48,6 +51,7 @@ function generateHtmlPlugins(templateDir) {
                         sourceMap: true
                     }
                 },
+
             ],
         };
         cssLoaders.push(cssLoader);
@@ -90,19 +94,66 @@ module.exports = {
                 include: path.resolve(__dirname, 'src/html/templates'),
                 use: ['raw-loader']
             },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: "file-loader",
+                options: {
+                    name: '../fonts/Intro/[name].[ext]',
+                }
+            },
+            {
+                test: /\.png$/,
+                loader: 'file-loader',
+                options: {
+                    name: '../icons/[hash].[ext]',
+                    outputPath: path.resolve(__dirname, 'build/icons'),
+                }
+            },
         ].concat(cssLoaders)
     },
 
     plugins: [
         new ExtractCssChunks(
             {
-                filename: './static/css/[name].'+time+'.css',
+                filename: './css/[name].'+time+'.css',
                 chunkFilename: "[id].css",
                 disable: false,
                 allChunks: true,
             }
         ),
-        //new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
+        new CopyWebpackPlugin([
+            {
+                from: './src/fonts',
+                to: './fonts'
+            },
+            {
+                from: './src/favicons/favicon.ico',
+                to: './favicons/favicon.ico'
+            },
+            {
+                from: './src/favicons/favicon.ico',
+                to: './favicons/favicon.ico'
+            },
+            {
+                from: './src/icons/ready',
+                to: './icons'
+            },
+        ]),
+        new WebpackMd5Hash(),
+        new SpritesmithPlugin({
+            src: {
+                cwd: path.resolve(__dirname, 'src/icons'),
+                glob: '*.png'
+            },
+            target: {
+                image: path.resolve(__dirname, 'src/icons/ready/[hash].png'),
+                css: path.resolve(__dirname, 'src/templates/sprite.less')
+            },
+            apiOptions: {
+                cssImageRef: "~sprite.png"
+            }
+        }),
 
     ].concat(htmlPlugins)
 };

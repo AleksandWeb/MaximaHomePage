@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="shortcut icon" href="./favicons/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link type="text/css" rel="stylesheet" href="<%= htmlWebpackPlugin.options.css %>">
-    <title>TZ</title>
+    <title>Тестовое задание</title>
 </head>
-<body>
+<body class="page">
 <%= _.template(require('html-loader!./../templates/header/header.html'))() %>
-    <p>start project</p>
+    <div class="page-content">
+
+    </div>
+<%= _.template(require('html-loader!./../templates/footer/footer.html'))() %>
     <script src="<%= htmlWebpackPlugin.files.chunks.home.entry %>"></script>
 </body>
 </html>

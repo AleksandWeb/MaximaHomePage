@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link type="text/css" rel="stylesheet" href="<%= htmlWebpackPlugin.options.css %>">
+    <title>TZ</title>
+</head>
+<body>
+<%= _.template(require('html-loader!./../templates/header/header.html'))() %>
+    <p>start project</p>
+    <script src="<%= htmlWebpackPlugin.files.chunks.home.entry %>"></script>
+</body>
+</html>

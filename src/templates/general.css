@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Intro-Bold';
+  src: url('~../fonts/Intro/Intro-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   margin: 0;
   padding: 0;
@@ -15,6 +21,7 @@ html {
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  background: #fff;
 }
 .page-content {
   padding: 20px;

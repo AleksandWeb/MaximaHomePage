@@ -34,7 +34,8 @@ function generateHtmlPlugins(templateDir) {
                     loader:ExtractCssChunks.loader,
                     options: {
                         hot: true,
-                        reloadAll: true
+                        reloadAll: true,
+                        publicPath: '../',
                     },
                 },
                 {
@@ -99,45 +100,35 @@ module.exports = {
                 loader: "file-loader",
                 options: {
                     name: '../fonts/Intro/[name].[ext]',
+                    outputPath: './build'
                 }
             },
             {
                 test: /\.png$/,
-                loader: 'file-loader',
-                options: {
+                loader: "file-loader",
+                options:{
                     name: '../icons/[hash].[ext]',
-                    outputPath: path.resolve(__dirname, 'build/icons'),
-                }
+                    outputPath: './build'
+                },
             },
         ].concat(cssLoaders)
     },
-
+    resolve: {
+        modules: ["node_modules", "icons/ready"]
+    },
     plugins: [
         new ExtractCssChunks(
             {
                 filename: './css/[name].'+time+'.css',
-                chunkFilename: "[id].css",
                 disable: false,
                 allChunks: true,
             }
         ),
-        new CleanWebpackPlugin(),
+        //new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
-                from: './src/fonts',
-                to: './fonts'
-            },
-            {
                 from: './src/favicons/favicon.ico',
                 to: './favicons/favicon.ico'
-            },
-            {
-                from: './src/favicons/favicon.ico',
-                to: './favicons/favicon.ico'
-            },
-            {
-                from: './src/icons/ready',
-                to: './icons'
             },
         ]),
         new WebpackMd5Hash(),
@@ -147,8 +138,8 @@ module.exports = {
                 glob: '*.png'
             },
             target: {
-                image: path.resolve(__dirname, 'src/icons/ready/[hash].png'),
-                css: path.resolve(__dirname, 'src/templates/sprite.less')
+                image: path.resolve(__dirname, 'src/icons/ready/sprite.png'),
+                css: path.resolve(__dirname, 'src/templates/sprite.less'),
             },
             apiOptions: {
                 cssImageRef: "~sprite.png"

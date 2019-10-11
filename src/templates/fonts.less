@@ -1,5 +1,5 @@
-@fontRegular: 'Intro-Regular';
-
+@fontRegular: "Intro-Regular";
+@fontBold: "Intro-Bold";
 
 .font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
   font-family: '@{fontName}';
@@ -10,4 +10,7 @@
 
 @font-face {
   .font(@fontRegular);
+}
+@font-face {
+  .font(@fontBold);
 }

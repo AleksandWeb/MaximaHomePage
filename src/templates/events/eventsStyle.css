@@ -1,0 +1,7 @@
+.flag-rectangle__1 {
+    position: relative;
+    background: #c63e61;
+    transform: skewY(15deg);
+    width: 150px;
+    height: 50px;
+}

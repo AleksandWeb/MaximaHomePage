@@ -1,16 +1,27 @@
 @fontRegular: "Intro-Regular";
 @fontBold: "Intro-Bold";
+@fontRegularAlt: "Intro-Regular-Alt";
+@OpenSansLight: "OpenSans-Light";
 
-.font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
+
+
+.font(@fontName; @directory; @ext; @format;  @urlName: @fontName; @weight: normal; @style: normal) {
   font-family: '@{fontName}';
-  src: url('~../fonts/Intro/@{urlName}.otf') format('opentype');
+  src: url('~../fonts/@{directory}/@{urlName}.@{ext}') format(@format);
   font-weight: @weight;
   font-style: @style;
 }
 
 @font-face {
-  .font(@fontRegular);
+  .font(@fontRegular, 'Intro', 'otf', 'opentype');
 }
 @font-face {
-  .font(@fontBold);
+  .font(@fontBold, 'Intro', 'otf', 'opentype');
+}
+@font-face {
+  .font(@fontRegularAlt, 'Intro', 'otf', 'opentype');
+}
+
+@font-face {
+  .font(@OpenSansLight, 'OpenSans', 'ttf', 'truetype');
 }

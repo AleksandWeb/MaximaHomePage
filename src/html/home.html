@@ -11,6 +11,7 @@
 <%= _.template(require('html-loader!./../templates/header/header.html'))() %>
     <div class="page-content">
 <%= _.template(require('html-loader!./../templates/slider/slider.html'))() %>
+<%= _.template(require('html-loader!./../templates/events/events.html'))() %>
     </div>
 <%= _.template(require('html-loader!./../templates/footer/footer.html'))() %>
     <script src="<%= htmlWebpackPlugin.files.chunks.home.entry %>"></script>

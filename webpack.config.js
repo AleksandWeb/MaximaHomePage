@@ -104,12 +104,16 @@ module.exports = {
                 }
             },
             {
-                test: /\.png$/,
+                test: /\.png$/i,
                 loader: "file-loader",
                 options:{
                     name: '../icons/[hash].[ext]',
                     outputPath: './build'
                 },
+            },
+            {
+                test: /\.(jpe?g|gif)$/i,
+                loader: "file-loader",
             },
         ].concat(cssLoaders)
     },
@@ -129,6 +133,10 @@ module.exports = {
             {
                 from: './src/favicons/favicon.ico',
                 to: './favicons/favicon.ico'
+            },
+            {
+                from: './src/images/',
+                to: './images/'
             },
         ]),
         new WebpackMd5Hash(),

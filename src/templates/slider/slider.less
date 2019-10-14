@@ -1,0 +1,73 @@
+@import "../sprite";
+
+.mySprite(@sprite, @scale) {
+  background-image: e(%('url(%a)', e(extract(@sprite, 9))));
+  background-position: extract(@sprite, 3) * @scale extract(@sprite, 4) * @scale;
+  width: extract(@sprite, 5) * @scale;
+  height: extract(@sprite, 6) * @scale;
+  background-size: extract(@sprite, 7) * @scale, extract(@sprite, 8) * @scale;
+}
+
+.main-slider {
+  margin-left: -20px;
+  margin-right: -20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-slider-item {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+}
+
+
+
+.main-slider-item-info {
+  position: absolute;
+  padding: 20px 40px;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  background: rgba(218, 58, 100, 0.9);
+  width: 315px;
+  color: #fff;
+
+}
+
+.main-slider-item__name {
+  font-family: "Intro-Regular-Alt";
+  font-size: 34px;
+  margin: 10px 0;
+  line-height: 115%;
+}
+
+.main-slider-item__description {
+  font-size: 14px;
+  line-height: 140%;
+  font-family: "OpenSans-Light";
+  margin: 12px 0;
+}
+
+.main-slider-item-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 40px;
+  padding-top: 10px;
+}
+.main-slider-item-nav__arrow {
+  cursor: pointer;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+}
+.arrow_left {
+  .mySprite(@arrow-left, 1);
+}
+.arrow_right {
+  .mySprite(@arrow-right, 1);
+}
+

@@ -1,0 +1,133 @@
+.events {
+  background: url('../../images/events/background-winter.jpg') no-repeat center bottom;
+  min-height: 450px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.events-wrapper {
+  padding: 8px 0;
+}
+.event-items {
+  display: flex;
+  justify-content: space-between;
+
+}
+.event-item {
+  padding: 30px 0;
+  height: 270px;
+  margin-left: -15px;
+  width: 245px;
+  color: #ffffff;
+  position: relative;
+  text-align: center;
+  &:nth-child(1){
+      top: 40px;
+  }
+  &:nth-child(2){
+    top: 20px;
+  }
+}
+.flag-rectangle__1 {
+  position: relative;
+  background: #c63e61;
+  transform: skewY(10deg);
+  width: 236px;
+  height: 55px;
+}
+
+.flag-rectangle__2 {
+  position: absolute;
+  left: 100%;
+  top: -7px;
+  background: #c63e61;
+  transform: skewY(-60deg);
+  width: 8px;
+  height: 55px;
+}
+.flag_leg1 {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 4px;
+  height: 260px;
+  background: #d0d0d0;
+  z-index: 1;
+}
+.flag_leg2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+  height: 230px;
+  background: #d0d0d0;
+  z-index: 2;
+}
+
+.flag-rectangle__3 {
+  position: absolute;
+  left: calc(100% + 8px);
+  top: -85px;
+  background: #de476e;
+  transform: skewY(-20deg) translateX(-100%);
+  width: 230px;
+  height: 86px;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Intro-Regular;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  span {
+    border-bottom: 2px solid transparent;
+    padding: 7px 0;
+    transition: 0.3s;
+  }
+  &:hover span {
+    border-bottom: 2px solid #fff;
+    padding: 0;
+  }
+
+}
+.flag-rectangle__4 {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  background: #f2537c;
+  transform: skewY(-20deg);
+  min-width: 55px;
+  height: 55px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: Intro-Bold-Alt;
+}
+.skier {
+  position: absolute;
+  width: 192px;
+  height: 130px;
+  background: url('../../images/events/skier.png') no-repeat center center;
+  animation: skier 6s infinite;
+  right: -200px;
+}
+
+@keyframes skier {
+  from {
+    right: -200px;
+    animation-timing-function: ease-out;
+    bottom: 70px;
+  }
+  80% {
+    right: calc( 100% + 200px);
+    animation-timing-function: ease-out;
+    bottom: 0;
+  }
+  to {
+    right: calc( 100% + 200px);
+    animation-timing-function: ease-out;
+    bottom: 0;
+  }
+}

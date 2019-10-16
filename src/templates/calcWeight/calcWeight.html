@@ -1,0 +1,48 @@
+        <div class="calc-weight">
+            <div class="wrapper">
+                <p class="calc-weight__title module-name">Взвесьте себя и узнайте, что делать</p>
+                <p class="calc-weight__desc">Узнайте, каким должен быть ваш вес, учитывая рост, возраст и род занятий. </p>
+                <form active="#" class="weight-form block block block_blue" id="weight-form">
+                    <div class="flex-row flex-row_center">
+                        <span class="weight-form__element weight-form__element_width_100">
+                            <label class="weight-form__input-label">
+                                <span class="weight-form__input-name">Вес:</span> <input class="weight-form__input weight-form__input-weight" type="text" value="85" name="weight">
+                            </label>
+                        </span>
+                        <span class="weight-form__element weight-form__element_width_100">
+                            <label class="weight-form__input-label">
+                                <span class="weight-form__input-name">Возраст:</span> <input class=" weight-form__input weight-form__input-age" type="text" value="30" name="age">
+                            </label>
+                        </span>
+                        <span class="weight-form__element weight-form__element_width_100">
+                            <label class="weight-form__input-label">
+                                <span class="weight-form__input-name">Рост:</span> <input class="weight-form__input weight-form__input-height" type="text" value="185" name="height">
+                            </label>
+                        </span>
+                    </div>
+                    <div class="flex-row flex-row_end weight-form__radio-list">
+                        <span class="weight-form__radio-list-name">Кто Вы?</span>
+                        <label class="weight-form__radio-label">
+                            <input class="input-hidden" type="radio" checked name="sex" value="1" /> <span class="weight-form__radio-name">Мужчина</span>
+                        </label>
+                        <label class="weight-form__radio-label">
+                            <input class="input-hidden" type="radio" name="sex" value="2" /> <span class="weight-form__radio-name">Женщина</span>
+                        </label>
+                        <span class="empty-btn"></span>
+                    </div>
+                    <div class="flex-row flex-row_end weight-form__radio-list">
+                        <span class="weight-form__radio-list-name">Телосложение</span>
+                        <label class="weight-form__radio-label">
+                            <input class="input-hidden" type="radio" checked name="body" value="1" /> <span class="weight-form__radio-name">Нормальное</span>
+                        </label>
+                        <label class="weight-form__radio-label">
+                            <input class="input-hidden" type="radio" name="body" value="2" /> <span class="weight-form__radio-name">Полное</span>
+                        </label>
+                        <label class="weight-form__radio-label">
+                            <input class="input-hidden" type="radio" name="body" value="3" /> <span class="weight-form__radio-name">Хрупкое</span>
+                        </label>
+                    </div>
+                    <button class="weight-form__button">Рассчитать</button>
+                </form>
+            </div>
+        </div>

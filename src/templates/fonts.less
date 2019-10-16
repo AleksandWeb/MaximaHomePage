@@ -1,9 +1,11 @@
 @fontRegular: "Intro-Regular";
 @fontBold: "Intro-Bold";
+@fontLight: "Intro-Light";
 @fontRegularAlt: "Intro-Regular-Alt";
+@fontBoldAlt: "Intro-Bold-Alt";
 @OpenSansLight: "OpenSans-Light";
-
-
+@OpenSans: "OpenSans-Regular";
+@OpenSansBold: "OpenSans-Bold";
 
 .font(@fontName; @directory; @ext; @format;  @urlName: @fontName; @weight: normal; @style: normal) {
   font-family: '@{fontName}';
@@ -19,9 +21,21 @@
   .font(@fontBold, 'Intro', 'otf', 'opentype');
 }
 @font-face {
+  .font(@fontLight, 'Intro', 'otf', 'opentype');
+}
+@font-face {
   .font(@fontRegularAlt, 'Intro', 'otf', 'opentype');
+}
+@font-face {
+  .font(@fontBoldAlt, 'Intro', 'otf', 'opentype');
 }
 
 @font-face {
+  .font(@OpenSans, 'OpenSans', 'ttf', 'truetype');
+}
+@font-face {
   .font(@OpenSansLight, 'OpenSans', 'ttf', 'truetype');
+}
+@font-face {
+  .font(@OpenSansBold, 'OpenSans', 'ttf', 'truetype');
 }

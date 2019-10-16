@@ -114,6 +114,27 @@ module.exports = {
             {
                 test: /\.(jpe?g|gif)$/i,
                 loader: "file-loader",
+                options:{
+                    name: '[name].[ext]',
+                    outputPath: (url, resourcePath, context) => {
+                        // `resourcePath` is original absolute path to asset
+                        // `context` is directory where stored asset (`rootContext`) or `context` option
+
+                        // To get relative path you can use
+                        // const relativePath = path.relative(context, resourcePath);
+
+                        /*if (/my-custom-image\.png/.test(resourcePath)) {
+                            return `other_output_path/${url}`;
+                        }
+
+                        if (/images/.test(context)) {
+                            return `image_output_path/${url}`;
+                        }*/
+
+                        const my_context = context + "/src";
+                        return path.relative(my_context, resourcePath).replace(/\\/g,"\/");;
+                    },
+                },
             },
         ].concat(cssLoaders)
     },
@@ -133,10 +154,6 @@ module.exports = {
             {
                 from: './src/favicons/favicon.ico',
                 to: './favicons/favicon.ico'
-            },
-            {
-                from: './src/images/',
-                to: './images/'
             },
         ]),
         new WebpackMd5Hash(),

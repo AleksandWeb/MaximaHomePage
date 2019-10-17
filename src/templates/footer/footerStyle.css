@@ -1,19 +1,132 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
 .footer {
   background: linear-gradient(to right, #e23760 0%, #f8597f 100%);
 }
 .footer-wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 45px 0;
+  padding: 42px 0;
 }
 .footer-section {
   color: #ffffff;
-  font-family: Intro-Regular;
+  font-family: OpenSans-Regular;
   font-size: 13px;
   display: flex;
   flex-direction: column;
 }
+.footer-section p {
+  margin: 5px 0;
+}
+.footer-section p.footer-section__name {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
 .footer-section__name {
   font-size: 18px;
+  font-family: Intro-Regular;
+}
+.footer-section__name_copyrite {
+  position: relative;
+}
+.footer-section__name_copyrite:before {
+  content: "©";
+  position: absolute;
+  transform: translateX(-100%);
+}
+.footer-socials {
+  width: calc(46px * 4 + 18px * 3);
+}
+.footer-social__item {
+  background: #e33861;
+  border-radius: 50%;
+}
+.footer-social__item_vk {
+  background-image: url(~sprite.png);
+  background-position: 0px -120px;
+  width: 46px;
+  height: 46px;
+  background-size: 207px, 166px;
+}
+.footer-social__item_facebook {
+  background-image: url(~sprite.png);
+  background-position: -120px -60px;
+  width: 46px;
+  height: 46px;
+  background-size: 207px, 166px;
+}
+.footer-social__item_ok {
+  background-image: url(~sprite.png);
+  background-position: -46px -120px;
+  width: 46px;
+  height: 46px;
+  background-size: 207px, 166px;
+}
+.footer-social__item_youtube {
+  background-image: url(~sprite.png);
+  background-position: -92px -120px;
+  width: 46px;
+  height: 46px;
+  background-size: 207px, 166px;
+}
+.footer-rules {
+  font-family: OpenSans-Regular;
+  font-size: 10px;
+}
+.footer-rules__link {
+  font-family: OpenSans-Bold;
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: baseline;
+}
+.footer-rules__link:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=footerStyle.css.map */

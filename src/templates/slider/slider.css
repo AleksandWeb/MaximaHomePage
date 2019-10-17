@@ -99,16 +99,16 @@ This must be run when you have at least 2 sprites.
 }
 .arrow_left {
   background-image: url(~sprite.png);
-  background-position: -120px -92px;
+  background-position: -191px -29px;
   width: 11px;
   height: 26px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
 }
 .arrow_right {
   background-image: url(~sprite.png);
-  background-position: -131px -92px;
+  background-position: -180px -29px;
   width: 11px;
   height: 26px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
 }
 /*# sourceMappingURL=slider.css.map */

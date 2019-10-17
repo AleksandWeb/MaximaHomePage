@@ -1,0 +1,87 @@
+.walk-men {
+  height: 225px;
+  position: relative;
+  background: radial-gradient(ellipse closest-side at center, #d6e3e5, #ffffff);
+  padding-top: 10px;
+}
+
+.walk-men__image {
+  position: absolute;
+  left: 0;
+  bottom: -35px;
+  height: 220px;
+  width: auto;
+  animation: walk-man 15s infinite;
+  transform: rotateZ(0deg);
+}
+
+@keyframes walk-man {
+  from {
+    left: 0;
+    animation-timing-function: linear;
+    transform: rotateY(0deg);
+  }
+  49% {
+    left: calc(100% - 220px);
+    animation-timing-function: linear;
+    transform: rotateY(0deg);
+  }
+  50% {
+    left: calc(100% - 220px);
+    animation-timing-function: linear;
+    transform: rotateY(180deg);
+  }
+  99% {
+    left: 0;
+    animation-timing-function: linear;
+    transform: rotateY(180deg);
+  }
+  to {
+    left: 0;
+    animation-timing-function: linear;
+    transform: rotateY(0deg);
+  }
+}
+
+
+.walk-men__counter {
+  min-width: 370px;
+  max-width: max-content;
+  box-sizing: border-box;
+  padding: 8px;
+  background: #fff;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+.walk-men__counter-info {
+  padding: 25px 30px;
+  box-sizing: border-box;
+  border: 4px solid #d3eff2;
+  font-family: OpenSans-Regular;
+  font-size: 14px;
+  position: relative;
+}
+.walk-men__counter-text_big {
+  font-size: 20px;
+  font-family: Intro-Regular;
+}
+.walk-men__counter-text_blue {
+  color: #1bbbd9;
+  font-family: Intro-Bold-Alt;
+}
+
+.walk-men-counter__leg {
+  position: absolute;
+  top: 100%;
+  width: 10px;
+  height: 100%;
+  background: linear-gradient(to right, #abbbbd 0%, #c4d4d6 100%);
+  content: '';
+}
+.walk-men-counter__leg_left {
+  left: 50px;
+}
+.walk-men-counter__leg_right {
+  right: 50px;
+}

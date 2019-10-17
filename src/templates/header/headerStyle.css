@@ -99,10 +99,10 @@ This must be run when you have at least 2 sprites.
 .header-fixed-button_attention .header-fixed-button__icon:before {
   content: "";
   background-image: url(~sprite.png);
-  background-position: -142px -92px;
+  background-position: -180px -55px;
   width: 16px;
   height: 16px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
   display: block;
   position: absolute;
   right: -7px;
@@ -125,17 +125,17 @@ This must be run when you have at least 2 sprites.
 }
 .header-fixed-button__icon_time-table {
   background-image: url(~sprite.png);
-  background-position: -152px -60px;
+  background-position: -180px 0px;
   width: 27px;
   height: 29px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
 }
 .header-fixed-button__icon_phone {
   background-image: url(~sprite.png);
-  background-position: -120px -60px;
+  background-position: -138px -120px;
   width: 32px;
   height: 32px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
 }
 .header-phone {
   font-size: 20px;
@@ -205,38 +205,38 @@ This must be run when you have at least 2 sprites.
 }
 .header-nav-icon_cards {
   background-image: url(~sprite.png);
-  background-position: 0px 0px;
+  background-position: -60px 0px;
   width: 60px;
   height: 60px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
 }
 .header-nav-icon_life {
-  background-image: url(~sprite.png);
-  background-position: -60px -60px;
-  width: 60px;
-  height: 60px;
-  background-size: 180px, 120px;
-}
-.header-nav-icon_team {
   background-image: url(~sprite.png);
   background-position: -120px 0px;
   width: 60px;
   height: 60px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
+}
+.header-nav-icon_team {
+  background-image: url(~sprite.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 60px;
+  background-size: 207px, 166px;
 }
 .header-nav-icon_contacts {
+  background-image: url(~sprite.png);
+  background-position: -60px -60px;
+  width: 60px;
+  height: 60px;
+  background-size: 207px, 166px;
+}
+.header-nav-icon_club {
   background-image: url(~sprite.png);
   background-position: 0px -60px;
   width: 60px;
   height: 60px;
-  background-size: 180px, 120px;
-}
-.header-nav-icon_club {
-  background-image: url(~sprite.png);
-  background-position: -60px 0px;
-  width: 60px;
-  height: 60px;
-  background-size: 180px, 120px;
+  background-size: 207px, 166px;
 }
 .header-nav-icon-shadow {
   width: 50px;

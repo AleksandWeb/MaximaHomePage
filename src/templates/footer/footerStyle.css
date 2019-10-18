@@ -88,28 +88,28 @@ This must be run when you have at least 2 sprites.
 }
 .footer-social__item_vk {
   background-image: url(~sprite.png);
-  background-position: 0px -120px;
+  background-position: -46px -120px;
   width: 46px;
   height: 46px;
   background-size: 207px, 166px;
 }
 .footer-social__item_facebook {
   background-image: url(~sprite.png);
-  background-position: -120px -60px;
+  background-position: -92px -120px;
   width: 46px;
   height: 46px;
   background-size: 207px, 166px;
 }
 .footer-social__item_ok {
   background-image: url(~sprite.png);
-  background-position: -46px -120px;
+  background-position: -120px -60px;
   width: 46px;
   height: 46px;
   background-size: 207px, 166px;
 }
 .footer-social__item_youtube {
   background-image: url(~sprite.png);
-  background-position: -92px -120px;
+  background-position: 0px -120px;
   width: 46px;
   height: 46px;
   background-size: 207px, 166px;

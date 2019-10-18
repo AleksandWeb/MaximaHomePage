@@ -116,17 +116,9 @@
   margin: 0 10px;
 }
 .weight-form__button {
-  min-width: 250px;
-  min-height: 55px;
-  box-sizing: border-box;
   background: none;
   color: #ffffff;
-  text-align: center;
   border: 2px solid #ffffff;
-  outline: 0;
-  border-radius: 3px;
-  font-size: 22px;
-  font-family: Intro-Regular-Alt;
 }
 .weight-form__button:hover {
   background: #41edff;

@@ -57,7 +57,7 @@ This must be run when you have at least 2 sprites.
 .header-section_fixed {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   height: 50px;
   width: 100%;
   background: linear-gradient(to right, #e23760 0%, #f8597f 100%);
@@ -205,7 +205,7 @@ This must be run when you have at least 2 sprites.
 }
 .header-nav-icon_cards {
   background-image: url(~sprite.png);
-  background-position: -60px 0px;
+  background-position: 0px -60px;
   width: 60px;
   height: 60px;
   background-size: 207px, 166px;
@@ -219,21 +219,21 @@ This must be run when you have at least 2 sprites.
 }
 .header-nav-icon_team {
   background-image: url(~sprite.png);
-  background-position: 0px 0px;
+  background-position: -60px 0px;
   width: 60px;
   height: 60px;
   background-size: 207px, 166px;
 }
 .header-nav-icon_contacts {
   background-image: url(~sprite.png);
-  background-position: -60px -60px;
+  background-position: 0px 0px;
   width: 60px;
   height: 60px;
   background-size: 207px, 166px;
 }
 .header-nav-icon_club {
   background-image: url(~sprite.png);
-  background-position: 0px -60px;
+  background-position: -60px -60px;
   width: 60px;
   height: 60px;
   background-size: 207px, 166px;

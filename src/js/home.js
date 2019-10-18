@@ -6,16 +6,73 @@ import '../templates/calcWeight/calcWeight.css';
 import '../templates/walkMan/walkMan.css';
 import '../templates/footer/footerStyle.css';
 
-import "../../node_modules/flickity/css/flickity.css"
+
+import "../../node_modules/flickity/css/flickity.css";
+import "../../node_modules/lhmodal/dist/lhmodal.css";
+import '../templates/modalWindows/modalWindows.css';
 
 import $ from "jquery";
-
 import Inputmask from "inputmask";
-
 import Flickity from "flickity";
+import Lhmodal from 'lhmodal';
+
 
 $(document).ready(function() {
 
+    /* <Modal windows > */
+
+    const headerFixedBlock = $('.header-section_fixed').get(0);
+
+    const modal = (modalElementClass, clickElementClass) => {
+
+        const $clickElement = $(clickElementClass);
+
+        const modalWindow = new Lhmodal(modalElementClass, {
+            classNames: {
+                modalContent: 'modal__content',
+                modalClose: 'modal__close',
+                bodyWithOpenModal: 'has-open-lhmodal',
+            },
+            catchFocus: false,
+        });
+
+        modalWindow.compensationScrollbarWidth = () => {
+            const isHasScrollbar = document.body.scrollHeight > window.innerHeight;
+            const scrollbarSize = modalWindow.getScrollbarSize();
+            console.log(scrollbarSize);
+            if (isHasScrollbar && scrollbarSize) {
+                document.documentElement.style.marginRight = `${scrollbarSize}px`;
+
+                headerFixedBlock.style.right = `${scrollbarSize/2}px`;
+            }
+        };
+
+        modalWindow.handlerClosed = () => {
+            const classNames = modalWindow.settings.classNames;
+            modalWindow.DOM.modal.dispatchEvent(modalWindow.events.closed);
+
+            modalWindow.DOM.modal.classList.remove(classNames.modalOut);
+
+            document.documentElement.classList.remove(classNames.bodyWithOpenModal);
+            document.documentElement.style.marginRight = 0;
+            headerFixedBlock.style.right = 0;
+
+        };
+
+        $clickElement.on('click', (e) => {
+            e = e || window.event;
+            e.preventDefault();
+            modalWindow.show();
+        });
+
+    };
+
+    modal('.callback-modal', '.header-fixed-button_callback');
+
+    modal('.weight-form-modal', '.weight-form__button');
+
+    /* </Modal windows > */
+    //////////////////////////
     /* <Home page slider> */
 
     var flkty = new Flickity('.main-slider', {
@@ -71,7 +128,7 @@ $(document).ready(function() {
     /* </submit form> */
 
     /* </Home page weight-form> */
-
+    /////////////////////////////
     /* <Walk-men counter> */
 
     let now_count_meters = 0,

@@ -1,48 +1,48 @@
 @font-face {
   font-family: 'Intro-Regular';
-  src: url('~../fonts/Intro/Intro-Regular.otf') format('opentype');
+  src: url('~../fonts/Intro/Intro-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Intro-Bold';
-  src: url('~../fonts/Intro/Intro-Bold.otf') format('opentype');
+  src: url('~../fonts/Intro/Intro-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Intro-Light';
-  src: url('~../fonts/Intro/Intro-Light.otf') format('opentype');
+  src: url('~../fonts/Intro/Intro-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Intro-Regular-Alt';
-  src: url('~../fonts/Intro/Intro-Regular-Alt.otf') format('opentype');
+  src: url('~../fonts/Intro/Intro-Regular-Alt.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Intro-Bold-Alt';
-  src: url('~../fonts/Intro/Intro-Bold-Alt.otf') format('opentype');
+  src: url('~../fonts/Intro/Intro-Bold-Alt.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSans-Regular';
-  src: url('~../fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+  src: url('~../fonts/OpenSans/OpenSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSans-Light';
-  src: url('~../fonts/OpenSans/OpenSans-Light.ttf') format('truetype');
+  src: url('~../fonts/OpenSans/OpenSans-Light.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSans-Bold';
-  src: url('~../fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+  src: url('~../fonts/OpenSans/OpenSans-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -106,5 +106,24 @@ html {
   left: 0;
   width: 0;
   height: 0;
+}
+.button {
+  min-width: 250px;
+  min-height: 55px;
+  border-radius: 3px;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  font-size: 22px;
+  font-family: Intro-Regular-Alt;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+.input {
+  box-sizing: border-box;
+  padding: 7px 10px;
+  font-size: 16px;
+  font-family: OpenSans-Regular;
 }
 /*# sourceMappingURL=general.css.map */

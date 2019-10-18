@@ -1,0 +1,122 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.has-open-lhmodal .page {
+  height: auto;
+}
+.modal {
+  z-index: 999;
+  color: #626161;
+}
+.modal__box {
+  padding: 25px 40px;
+  border: 5px solid #d3eff2;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+.modal__content {
+  padding: 6px;
+  width: auto;
+  max-width: 978px;
+}
+.modal__close {
+  background-image: url(~sprite.png);
+  background-position: -180px -71px;
+  width: 14px;
+  height: 14px;
+  background-size: 207px, 166px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.modal__name {
+  font-size: 34px;
+  font-family: Intro-Regular-Alt, Arial, sans-serif;
+  margin: 10px;
+}
+/************Callback form ***********************/
+.callback-form {
+  width: 330px;
+}
+.callback-form__label {
+  display: block;
+  text-align: left;
+  margin: 15px 0;
+}
+.callback-form__input {
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 0 0 1px #b7e5eb inset;
+  background: #D3EFF2;
+  border: 0;
+  outline: 0;
+}
+.callback-form__button {
+  background: #1bbbd9;
+  color: #ffffff;
+  margin: 15px 0;
+  border: 2px solid #1bbbd9;
+}
+.callback-form__button:hover {
+  border-color: #41edff;
+  background: #41edff;
+}
+.callback-form__button:hover:active {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+.callback-form__privacy {
+  color: #999;
+  font-size: 10px;
+  font-family: OpenSans-Regular;
+  text-align: left;
+}
+.callback-form__label-name {
+  font-size: 13px;
+  font-family: OpenSans-Regular;
+}
+/*# sourceMappingURL=modalWindows.css.map */

@@ -1,0 +1,93 @@
+@import "../sprite";
+.mySprite(@sprite, @scale) {
+  background-image: e(%('url(%a)', e(extract(@sprite, 9))));
+  background-position: extract(@sprite, 3) * @scale extract(@sprite, 4) * @scale;
+  width: extract(@sprite, 5) * @scale;
+  height: extract(@sprite, 6) * @scale;
+  background-size: extract(@sprite, 7) * @scale, extract(@sprite, 8) * @scale;
+}
+
+
+.has-open-lhmodal {
+  .page {
+    height: auto;
+ }
+}
+.modal {
+  z-index: 999;
+  color: #626161;
+}
+
+.modal__box {
+  padding: 25px 40px;
+  border: 5px solid #d3eff2;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+
+.modal__content {
+  padding: 6px;
+  width: auto;
+  max-width: 978px;
+}
+
+.modal__close {
+  .mySprite(@close-btn, 1);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.modal__name {
+  font-size: 34px;
+  font-family: Intro-Regular-Alt, Arial, sans-serif;
+  margin: 10px;
+}
+
+/************Callback form ***********************/
+
+.callback-form {
+  width: 330px;
+}
+
+.callback-form__label {
+  display: block;
+  text-align: left;
+  margin: 15px 0;
+}
+
+.callback-form__input {
+  width: 100%;
+  height: 40px;
+  box-shadow: 0 0 0 1px #b7e5eb inset;
+  background: #D3EFF2;
+  border: 0;
+  outline: 0;
+}
+
+
+.callback-form__button {
+  background: #1bbbd9;
+  color: #ffffff;
+  margin: 15px 0;
+  border: 2px solid #1bbbd9;
+  &:hover {
+    border-color: #41edff;
+    background: #41edff;
+    &:active {
+        border-color: rgba(0,0,0,0.3) !important;
+    }
+  }
+}
+.callback-form__privacy {
+  color: #999;
+  font-size: 10px;
+  font-family: OpenSans-Regular;
+  text-align: left;
+}
+
+.callback-form__label-name {
+  font-size: 13px;
+  font-family: OpenSans-Regular;
+}

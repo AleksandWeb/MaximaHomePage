@@ -134,7 +134,7 @@ module.exports = {
                 allChunks: true,
             }
         ),
-        //new CleanWebpackPlugin(),
+        new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
                 from: './src/favicons/favicon.ico',

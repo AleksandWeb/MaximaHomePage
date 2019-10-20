@@ -45,13 +45,13 @@ This must be run when you have at least 2 sprites.
 
 .sprites(@spritesheet-sprites);
 */
-.main-slider {
+.main-slider__slides {
   margin-left: -20px;
   margin-right: -20px;
   overflow: hidden;
   position: relative;
 }
-.main-slider-item {
+.main-slider__item {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
@@ -62,7 +62,7 @@ This must be run when you have at least 2 sprites.
 .main-slider__image {
   display: block;
 }
-.main-slider-item-info {
+.main-slider__item-info {
   position: absolute;
   padding: 20px 40px;
   top: 50%;
@@ -72,39 +72,39 @@ This must be run when you have at least 2 sprites.
   width: 315px;
   color: #fff;
 }
-.main-slider-item__name {
+.main-slider__item-name {
   font-family: "Intro-Regular-Alt";
   font-size: 34px;
   margin: 10px 0;
   line-height: 115%;
 }
-.main-slider-item__description {
+.main-slider__item-description {
   font-size: 14px;
   line-height: 140%;
   font-family: "OpenSans-Light";
   margin: 12px 0;
 }
-.main-slider-item-nav {
+.main-slider__item-nav {
   display: flex;
   justify-content: space-between;
   width: 40px;
   padding-top: 10px;
 }
-.main-slider-item-nav__arrow {
+.main-slider__arrow {
   cursor: pointer;
   opacity: 0.8;
 }
-.main-slider-item-nav__arrow:hover {
+.main-slider__arrow:hover {
   opacity: 1;
 }
-.arrow_left {
+.main-slider__arrow_left {
   background-image: url(~sprite.png);
   background-position: -191px -29px;
   width: 11px;
   height: 26px;
   background-size: 207px, 166px;
 }
-.arrow_right {
+.main-slider__arrow_right {
   background-image: url(~sprite.png);
   background-position: -180px -29px;
   width: 11px;

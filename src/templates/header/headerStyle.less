@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.header-section_fixed {
+.header-fixed {
   position: fixed;
   top: 0;
   right: 0;
@@ -27,42 +27,40 @@
   background: linear-gradient(to right, #e23760 0%, #f8597f 100%);
   z-index: 99;
 }
-.header-fixed-item {
+
+.header-fixed__item {
   display: flex;
   align-items: center;
   color: #ffffff;
   justify-content: center;
 }
 
-
-.header-fixed-item_bg_red {
-  background: #ce375b;
-}
-.header-fixed-button {
+.header-fixed__button {
   font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.3px;
   height: 100%;
   width: 230px;
-  span {
-    margin: 0 7px;
-    text-decoration: none;
-  }
-  .header-fixed-button__text {
-    padding: 7px 0;
-    border-bottom: 1px solid transparent;
-    transition: 0.3s;
-  }
+  background: #ce375b;
   &:hover {
-    .header-fixed-button__text {
+    .header-fixed__button-text {
       padding: 1px 0;
       border-bottom: 1px solid #ffffff;
     }
   }
 }
-.header-fixed-button_attention {
-  .header-fixed-button__icon {
+
+.header-fixed__button-text {
+  padding: 7px 0;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+  margin: 0 7px;
+  text-decoration: none;
+}
+
+.header-fixed__button_attention {
+  .header-fixed__button-icon {
     position: relative;
     &:before {
       content: "";
@@ -92,26 +90,26 @@
   }
 }
 
-
-.header-fixed-button__icon_time-table {
+.header-fixed__button-icon_time-table {
   .mySprite(@calendar, 1) ;
 }
-.header-fixed-button__icon_phone {
+.header-fixed__button-icon_phone {
   .mySprite(@header-phone, 1) ;
 }
 
-.header-phone {
+.header-fixed__phone {
   font-size: 20px;
   text-decoration: none;
   font-family: Intro-Bold;
 }
-.header-phone__code_small {
+.header-fixed__phone-code_small {
   font-size: 14px;
   font-family: Intro-Regular;
   color: #ffa3b9;
 }
 
-.header-section-bottom {
+
+.header-bottom {
   padding: 35px 0;
   .header-wrapper {
     align-items: flex-end;
@@ -123,7 +121,7 @@
   justify-content: space-between;
   align-items: flex-end;
 }
-.header-nav-item {
+.header-nav__item {
   font-size: 12px;
   color: #6b6b6b;
   font-family: Intro-Regular;
@@ -138,22 +136,25 @@
   transition: 0.2s;
   &:hover {
     color: #e34168;
-    .header-nav-icon {
+    .header-nav__icon {
       background-color: #e63e66;
       top: -17px;
     }
-    .header-nav-icon-shadow {
+    .header-nav__icon-shadow {
       transform: scale(0.8, 0.8);
     }
   }
-  &.header-nav-item_current {
-    color: #e34168;
-    .header-nav-icon {
-      background-color: #e63e66;
-    }
+
+}
+
+.header-nav__item_current {
+  color: #e34168;
+  .header-nav__icon {
+    background-color: #e63e66;
   }
 }
-.header-nav-icon {
+
+.header-nav__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,25 +168,23 @@
   transition: 0.3s cubic-bezier(0.68, -0.85, 0.265, 1.55); /*ease-out;*/
 }
 
-.header-nav-icon_cards {
+.header-nav__icon_cards {
   .mySprite(@cards, 1);
 }
-.header-nav-icon_life {
+.header-nav__icon_life {
   .mySprite(@life, 1);
 }
-.header-nav-icon_team {
+.header-nav__icon_team {
   .mySprite(@team, 1);
 }
-.header-nav-icon_contacts {
+.header-nav__icon_contacts {
   .mySprite(@contacts, 1);
 }
-.header-nav-icon_club {
+.header-nav__icon_club {
   .mySprite(@club, 1);
 }
 
-
-
-.header-nav-icon-shadow {
+.header-nav__icon-shadow {
   width: 50px;
   height: 12px;
   background: linear-gradient(to top, #ececec 0%, #f2f2f2 100%);
@@ -193,7 +192,7 @@
   transition: 0.2s ease-out;
   margin-bottom: 12px;
 }
-.header-section-fixed-place {
+.header-section__fixed-place {
   height: 50px;
   width: 100%;
 }

@@ -58,7 +58,7 @@ function generateHtmlPlugins(templateDir) {
         cssLoaders.push(cssLoader);
         return new HtmlWebpackPlugin({
             filename: `${name}.html`,
-            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}`),
+            template: path.resolve(__dirname, `${templateDir}/${name}.${extension}` ),
             inject: false,
             css: `${cssPath}${name}.${time}.css`,
             js: `${jsPath}${name}.${time}.js`
@@ -67,7 +67,6 @@ function generateHtmlPlugins(templateDir) {
 }
 
 const htmlPlugins = generateHtmlPlugins('./src/html');
-
 
 module.exports = {
     entry: {
@@ -99,7 +98,7 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 loader: "file-loader",
                 options: {
-                    name: '../fonts/Intro/[name].[ext]',
+                    name: '../fonts/Intro/[name].[ext]',  // Исправить шрифты по папкам
                     outputPath: './build'
                 }
             },
@@ -117,20 +116,6 @@ module.exports = {
                 options:{
                     name: '[name].[ext]',
                     outputPath: (url, resourcePath, context) => {
-                        // `resourcePath` is original absolute path to asset
-                        // `context` is directory where stored asset (`rootContext`) or `context` option
-
-                        // To get relative path you can use
-                        // const relativePath = path.relative(context, resourcePath);
-
-                        /*if (/my-custom-image\.png/.test(resourcePath)) {
-                            return `other_output_path/${url}`;
-                        }
-
-                        if (/images/.test(context)) {
-                            return `image_output_path/${url}`;
-                        }*/
-
                         const my_context = context + "/src";
                         return path.relative(my_context, resourcePath).replace(/\\/g,"\/");;
                     },
@@ -149,7 +134,7 @@ module.exports = {
                 allChunks: true,
             }
         ),
-        new CleanWebpackPlugin(),
+        //new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
                 from: './src/favicons/favicon.ico',

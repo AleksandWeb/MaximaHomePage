@@ -19,41 +19,47 @@
   from {
     left: 0;
     animation-timing-function: linear;
-    transform: rotateY(0deg);
+    transform: translateX(0) rotateY(0deg);
   }
   49% {
-    left: calc(100% - 220px);
+    left: 100%;
     animation-timing-function: linear;
-    transform: rotateY(0deg);
+    transform: translateX(-100%) rotateY(0deg);
   }
   50% {
-    left: calc(100% - 220px);
+    left: 100%;
     animation-timing-function: linear;
-    transform: rotateY(180deg);
+    transform: translateX(-100%) rotateY(180deg);
   }
   99% {
     left: 0;
     animation-timing-function: linear;
-    transform: rotateY(180deg);
+    transform: translateX(0) rotateY(180deg);
   }
   to {
     left: 0;
     animation-timing-function: linear;
-    transform: rotateY(0deg);
+    transform: translateX(0) rotateY(0deg);
   }
 }
 
+.walk-men-wrapper {
+  text-align: center;
+}
 
 .walk-men__counter {
+  text-align: left;
   min-width: 370px;
-  max-width: max-content;
   box-sizing: border-box;
   padding: 8px;
   background: #fff;
   margin: 0 auto;
   position: relative;
   overflow: visible;
+  display: inline-block;
 }
+
+
 .walk-men__counter-info {
   padding: 25px 30px;
   box-sizing: border-box;

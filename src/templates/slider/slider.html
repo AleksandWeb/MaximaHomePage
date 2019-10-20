@@ -1,48 +1,47 @@
-        <div class="wrapper main-slider-wrapper">
-            <div class="main-slider">
-                <div class="main-slider-item">
-                    <a href="#" class="main-slider__link"><img src="../../images/slider/slide1.jpg" class="main-slider__image" alt="" title=""/></a>
-                    <div class="main-slider-item-info">
-                        <p class="main-slider-item__name">Карта на полгода за 9900!</p>
-                        <p class="main-slider-item__description">21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу. </p>
-                        <div class="main-slider-item-nav">
-                            <span class="main-slider-item-nav__arrow arrow_left"></span>
-                            <span class="main-slider-item-nav__arrow arrow_right"></span>
+        <div class="main-slider">
+            <div class="wrapper">
+                <div class="main-slider__slides">
+                    <%
+                    var slides = [
+                    {
+                    image: '<img src="../../images/slider/slide1.jpg" class="main-slider__image" alt="" title=""/>',
+                    name: "Карта на полгода за 9900!",
+                    desc: "21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу.",
+                    link: "#"
+                    },
+                    {
+                    image: '<img src="../../images/slider/slide2.jpg" class="main-slider__image" alt="" title=""/>',
+                    name: "Карта на полгода за 9900!",
+                    desc: "21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу.",
+                    link: "#"
+                    },
+                    {
+                    image: '<img src="../../images/slider/slide3.jpg" class="main-slider__image" alt="" title=""/>',
+                    name: "Карта на полгода за 9900!",
+                    desc: "21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу.",
+                    link: "#"
+                    },
+                    {
+                    image: '<img src="../../images/slider/slide4.jpg" class="main-slider__image" alt="" title=""/>',
+                    name: "Карта на полгода за 9900!",
+                    desc: "21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу.",
+                    link: "#"
+                    },
+                    ];
+                    slides.forEach(function(slide) {
+                    %>
+                    <div class="main-slider__item">
+                        <a href="<%- slide.link %>" class="main-slider__link"><%= slide.image %></a>
+                        <div class="main-slider__item-info">
+                            <p class="main-slider__item-name"><%= slide.name %></p>
+                            <p class="main-slider__item-description"><%= slide.desc %></p>
+                            <div class="main-slider__item-nav">
+                                <span class="main-slider__arrow main-slider__arrow_left"></span>
+                                <span class="main-slider__arrow main-slider__arrow_right"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="main-slider-item">
-                    <a href="#" class="main-slider__link"><img src="../../images/slider/slide2.jpg" class="main-slider__image" alt="" title=""/></a>
-                    <div class="main-slider-item-info">
-                        <p class="main-slider-item__name">Карта на полгода за 9900!</p>
-                        <p class="main-slider-item__description">21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу. </p>
-                        <div class="main-slider-item-nav">
-                            <span class="main-slider-item-nav__arrow arrow_left"></span>
-                            <span class="main-slider-item-nav__arrow arrow_right"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-slider-item">
-                    <a href="#" class="main-slider__link"><img src="../../images/slider/slide3.jpg" class="main-slider__image" alt="" title=""/></a>
-                    <div class="main-slider-item-info">
-                        <p class="main-slider-item__name">Карта на полгода за 9900!</p>
-                        <p class="main-slider-item__description">21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу. </p>
-                        <div class="main-slider-item-nav">
-                            <span class="main-slider-item-nav__arrow arrow_left"></span>
-                            <span class="main-slider-item-nav__arrow arrow_right"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-slider-item">
-                    <a href="#" class="main-slider__link"><img src="../../images/slider/slide4.jpg" class="main-slider__image" alt="" title=""/></a>
-                    <div class="main-slider-item-info">
-                        <p class="main-slider-item__name">Карта на полгода за 9900!</p>
-                        <p class="main-slider-item__description">21 декабря в фитнес-клубе Максима прошли соревнования по армрестлингу. </p>
-                        <div class="main-slider-item-nav">
-                            <span class="main-slider-item-nav__arrow arrow_left"></span>
-                            <span class="main-slider-item-nav__arrow arrow_right"></span>
-                        </div>
-                    </div>
+                    <% }); %>
                 </div>
             </div>
         </div>

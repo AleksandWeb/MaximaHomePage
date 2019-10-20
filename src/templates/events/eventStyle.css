@@ -42,23 +42,19 @@
   width: 8px;
   height: 55px;
 }
-.flag_leg1 {
+.flag__leg {
   position: absolute;
-  left: 20px;
   top: 0;
   width: 4px;
   height: 260px;
   background: #d0d0d0;
   z-index: 1;
 }
-.flag_leg2 {
-  position: absolute;
+.flag__leg_left {
+  left: 20px;
+}
+.flag__leg_right {
   right: 0;
-  top: 0;
-  width: 4px;
-  height: 230px;
-  background: #d0d0d0;
-  z-index: 2;
 }
 .flag-rectangle__3 {
   position: absolute;
@@ -112,17 +108,17 @@
 @keyframes skier {
   from {
     right: -200px;
-    animation-timing-function: ease-out;
+    animation-timing-function: linear;
     bottom: 70px;
   }
   80% {
-    right: calc(100% + 200px);
-    animation-timing-function: ease-out;
+    right: 100%;
+    animation-timing-function: linear;
     bottom: 0;
   }
   to {
-    right: calc(100% + 200px);
-    animation-timing-function: ease-out;
+    right: 100%;
+    animation-timing-function: linear;
     bottom: 0;
   }
 }

@@ -96,6 +96,9 @@ This must be run when you have at least 2 sprites.
   border: 0;
   outline: 0;
 }
+.callback-form__input:focus {
+  background: #ffffff;
+}
 .callback-form__button {
   background: #1bbbd9;
   color: #ffffff;

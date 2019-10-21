@@ -31,6 +31,21 @@ class MyModal extends Lhmodal {
         this.DOM.modal.dispatchEvent(this.events.shown);
     }
 
+    close(callback) {
+        const classNames = this.settings.classNames;
+
+        this.DOM.modal.dispatchEvent(this.events.close);
+
+        this.DOM.modal.classList.remove(classNames.modalIn);
+        this.DOM.modal.classList.add(classNames.modalOut);
+
+        this.settings.isVisible = false;
+
+        if(typeof callback === "function") {
+            callback();
+        }
+
+    }
 }
 
 export function modalWindow(modalElementClass, clickElementClass) {
@@ -52,7 +67,5 @@ export function modalWindow(modalElementClass, clickElementClass) {
     } else {
         modalWindow.show();
     }
-
-
-
+    return modalWindow;
 }

@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     /*<Callback form > */
 
-    modalWindow('callback-modal', 'header-fixed__button_callback');
+    let callbackModal = modalWindow('callback-modal', 'header-fixed__button_callback');
 
     const $callbackForm = $("#callback-form");
 
@@ -32,6 +32,39 @@ $(document).ready(function() {
     $callbackForm.on('submit', function(e) {
         e.preventDefault();
         console.log($(this).serializeArray());
+
+        /* Заглушка */
+        callbackModal.close(() => {
+            modalWindow('callback-modal-success');
+        });
+
+        /** Пример отправки данных
+        const requestUrl = "http://site-url.ru/ajax",
+            action = 'callback';
+
+        const getOptions = (action, data) => {
+            return {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                },
+                body: 'action='+action+'&data=' + data
+            }
+        };
+
+        let fetchCallback = fetch(requestUrl, getOptions(action, JSON.stringify($(this).serializeArray())));
+        fetchCallback.then(function(response){
+            if (response.status === 200) {
+                response.json().then(function (d) {
+                    if(d.msg) {
+                        callbackModal.close(() => {
+                            modalWindow('callback-modal-success');
+                        });
+                    }
+                });
+            }
+        });*/
+
     });
     /*</Callback form > */
 

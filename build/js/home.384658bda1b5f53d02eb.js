@@ -19221,7 +19221,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
     /*<Callback form > */
 
-    (0, _modalWindows.modalWindow)('callback-modal', 'header-fixed__button_callback');
+    var callbackModal = (0, _modalWindows.modalWindow)('callback-modal', 'header-fixed__button_callback');
 
     var $callbackForm = (0, _jquery2.default)("#callback-form");
 
@@ -19230,6 +19230,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     $callbackForm.on('submit', function (e) {
         e.preventDefault();
         console.log((0, _jquery2.default)(this).serializeArray());
+
+        /* Заглушка */
+        callbackModal.close(function () {
+            (0, _modalWindows.modalWindow)('callback-modal-success');
+        });
+
+        /** Пример отправки данных
+        const requestUrl = "http://site-url.ru/ajax",
+            action = 'callback';
+          const getOptions = (action, data) => {
+            return {
+                method: 'POST',
+                headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                },
+                body: 'action='+action+'&data=' + data
+            }
+        };
+          let fetchCallback = fetch(requestUrl, getOptions(action, JSON.stringify($(this).serializeArray())));
+        fetchCallback.then(function(response){
+            if (response.status === 200) {
+                response.json().then(function (d) {
+                    if(d.msg) {
+                        callbackModal.close(() => {
+                            modalWindow('callback-modal-success');
+                        });
+                    }
+                });
+            }
+        });*/
     });
     /*</Callback form > */
 
@@ -19413,6 +19443,22 @@ var MyModal = function (_Lhmodal) {
             }
             this.DOM.modal.dispatchEvent(this.events.shown);
         }
+    }, {
+        key: "close",
+        value: function close(callback) {
+            var classNames = this.settings.classNames;
+
+            this.DOM.modal.dispatchEvent(this.events.close);
+
+            this.DOM.modal.classList.remove(classNames.modalIn);
+            this.DOM.modal.classList.add(classNames.modalOut);
+
+            this.settings.isVisible = false;
+
+            if (typeof callback === "function") {
+                callback();
+            }
+        }
     }]);
 
     return MyModal;
@@ -19437,6 +19483,7 @@ function modalWindow(modalElementClass, clickElementClass) {
     } else {
         modalWindow.show();
     }
+    return modalWindow;
 }
 
 /***/ }),
@@ -19740,4 +19787,4 @@ if (content.locals) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=home.563cd1d4813798811111.js.map
+//# sourceMappingURL=home.384658bda1b5f53d02eb.js.map
